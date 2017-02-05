@@ -1,7 +1,6 @@
 package com.ft.config.interceptors;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -18,6 +17,7 @@ public class WebAppConfigurer extends WebMvcConfigurerAdapter{
         // excludePathPatterns 用户排除拦截
 
     	registry.addInterceptor(new AuthInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new TokenIterceptor()).addPathPatterns("/**");
 
 
         super.addInterceptors(registry);
@@ -31,7 +31,7 @@ public class WebAppConfigurer extends WebMvcConfigurerAdapter{
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
 //      registry.addResourceHandler("/new/**").addResourceLocations("classpath:/new/");
-//      registry.addResourceHandler("/**").addResourceLocations("/");
+      registry.addResourceHandler("/**").addResourceLocations("classpath:/templates");
         super.addResourceHandlers(registry);
     }
 }

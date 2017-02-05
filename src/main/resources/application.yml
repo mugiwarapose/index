@@ -6,9 +6,9 @@ server:
 spring:
     datasource:
         name: test
-        url: jdbc:mysql://127.0.0.1:3306/jdbcstudy
+        url: jdbc:mysql://127.0.0.1:3306/boot
         username: root
-        password: restful
+        password: root
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
@@ -41,13 +41,20 @@ spring:
             encoding.force: true  
             
             
-    mvc:
-        view:
-            prefix: /templates/
-            suffix: .ftl
-    freemarker:
-        cache: false
-        request-context-attribute: request
+    #mvc:
+    #    view:
+     #       prefix: /templates/
+            suffix: .flt
+    #freemarker:
+     #   cache: false
+      #  request-context-attribute: request
+
+
+
+
+
+
+
 
 
 mybatis:
@@ -62,4 +69,4 @@ mybatis:
  # LOGGING
     logging:
         level:
-            com.zsx.dao: DEBUG           
+            com.ft.dao: DEBUG

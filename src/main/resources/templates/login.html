@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <form action="/login" th:object="${session}" method="post">
+
+        <input type="text" name="userNum" />
+        <input type="text" name="token" value="null" th:value="${session.token}" />
+        <input type="password" name="password" />
+        <input type="submit" value="submit" />
+    </form>
+
+<p th:text="${session.token}" ></p>
+</body>
+
+
+</html>

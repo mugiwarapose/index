@@ -4,4 +4,17 @@
 	<select id="findAllUser" resultType="com.ft.entity.User">
 		select * from t_user
 	</select>
+
+	<select id="findOne" parameterType="User" resultType="User">
+
+		SELECT user_id,user_num,username,password,active
+		FROM t_user t
+		WHERE  t.active != '0'
+
+		and (t.user_num = #{usernum} or t.username = #{usernum})
+
+		and  t.password = #{password}
+
+
+	</select>
 </mapper>  
